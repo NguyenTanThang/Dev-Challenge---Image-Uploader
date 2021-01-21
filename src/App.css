@@ -1,38 +1,211 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #FAFAFB;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: 1px solid #2F80ED;
+  background-color: #2F80ED;
+  color: #FFF;
+}
+
+.btn-primary:hover {
+  background-color: #FFF;
+  color: #2F80ED;
+}
+
+.home {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__wrapper--upload {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home__wrapper--upload > * {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.home__wrapper {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  max-width: 400px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.home__wrapper h4 {
+  font-weight: 500;
+  color: #4F4F4F;
+  font-size: 1.2rem;
+}
+
+.home__wrapper h5 {
+  color: #828282;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#drop-area {
+  background: #F6F8FB;
+  border: 1px dashed #97BEF4;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+}
+
+#drop-area #fileElem {
+  display: none;
+}
+
+#drop-area h6 {
+  color: #BDBDBD;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+#drop-area .upload-form__image {
+  max-width: 115px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+#image-upload-form p {
+  color: #BDBDBD;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home__wrapper--loading h4,
+.home__wrapper--complete h4 {
+  margin-bottom: 20px;
+}
+
+.home__wrapper--complete h4 {
+  text-align: center;
+}
+
+.complete-icon {
+  width: 35px;
+  height: 35px;
+  background: #219653;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.complete-icon span {
+  line-height: 35px;
+  color: #FFF;
+}
+
+.home-wrapper__demo {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.home-wrapper__demo img {
+  border-radius: 12px;
+}
+
+/*Progress*/
+.progress {
+  width: 100%;
+  background: #F2F2F2;
+  border-radius: 8px;
+  height: 6px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #2F80ED;
+  border-radius: 8px;
+  width: 20%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+
+  transition: all 1s ease-in-out;
+  animation: ani 1.7s infinite;
+}
+
+@keyframes ani {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 80%;
+  }
+  100% {
+    left: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-wrapper__copy {
+  background: #F6F8FB;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 5px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.home-wrapper__copy p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  flex: 70%;
+  max-width: 70%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  body {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
